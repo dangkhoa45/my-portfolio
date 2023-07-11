@@ -25,9 +25,9 @@ export let theme = createTheme({
 		error: {
 			main: red.A400,
 		},
-		text:{
-			primary:'#21243D',
-		}
+		text: {
+			primary: '#21243D',
+		},
 	},
 	components: {
 		MuiLink: {
@@ -50,6 +50,24 @@ export let theme = createTheme({
 					props: { variant: 'contained', color: 'primary' },
 					style: {
 						color: 'white',
+					},
+				},
+			],
+		},
+		MuiChip: {
+			styleOverrides: {
+				root: {
+					paddingInline: 4,
+				},
+			},
+			variants: [
+				{
+					props: { color: 'secondary' },
+					style: {
+						backgroundColor: '#142850',
+						color: 'white',
+						fontSize: 16,
+						fontWeight: 'bold',
 					},
 				},
 			],
