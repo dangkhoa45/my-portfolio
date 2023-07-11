@@ -1,5 +1,5 @@
 import { Roboto } from 'next/font/google'
-import { createTheme } from '@mui/material/styles'
+import { createTheme, responsiveFontSizes } from '@mui/material/styles'
 import { red } from '@mui/material/colors'
 
 export const roboto = Roboto({
@@ -10,7 +10,7 @@ export const roboto = Roboto({
 })
 
 // Create a theme instance.
-const theme = createTheme({
+export let theme = createTheme({
 	typography: {
 		fontFamily: roboto.style.fontFamily,
 	},
@@ -25,24 +25,21 @@ const theme = createTheme({
 		error: {
 			main: red.A400,
 		},
+		text:{
+			primary:'#21243D',
+		}
 	},
 	components: {
-		MuiContainer: {
+		MuiLink: {
 			defaultProps: {
-				maxWidth: 'md',
+				underline: 'none',
 			},
 			styleOverrides: {
-				maxWidthSm: {
-					maxWidth: '680px',
-					'@media (min-width: 600px)': {
-						maxWidth: '680px',
-					},
-				},
+				root: {
+					color: 'black',
 
-				maxWidthMd: {
-					maxWidth: '860px',
-					'@media (min-width: 900px)': {
-						maxWidth: '860px',
+					'&:hover, &.active': {
+						color: '#FF6464',
 					},
 				},
 			},
@@ -60,4 +57,4 @@ const theme = createTheme({
 	},
 })
 
-export default theme
+theme = responsiveFontSizes(theme)

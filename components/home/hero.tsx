@@ -1,7 +1,7 @@
-import { Box, Button, Container, Stack, Typography } from '@mui/material'
-import * as React from 'react'
-import Image from 'next/image'
 import avatar from '@/images/avatar.png'
+import { Button, Container, Stack, Typography } from '@mui/material'
+import { Box } from '@mui/system'
+import Image from 'next/image'
 
 export function HeroSection() {
 	return (
@@ -9,7 +9,7 @@ export function HeroSection() {
 			<Container>
 				<Stack direction={{ xs: 'column-reverse', md: 'row' }} spacing={8}>
 					<Box>
-						<Typography component="h1" variant="h2" fontWeight="bold" mb={{ xs: 3.5, md: 5 }}>
+						<Typography component="h1" variant="h3" fontWeight="bold" mb={{ xs: 3.5, md: 5 }}>
 							Hi, I am John,
 							<br />
 							Creative Technologist
@@ -23,7 +23,14 @@ export function HeroSection() {
 							Download Resume
 						</Button>
 					</Box>
-					<Box sx={{ minWidth: '240px', color: 'secondary.light' }}>
+					<Box
+						sx={{
+							minWidth: '330px',
+							color: 'secondary.light',
+							boxShadow: '-5px 13px',
+							borderRadius: '50%',
+						}}
+					>
 						<Image src={avatar} layout="responsive" alt="avatar" />
 					</Box>
 				</Stack>

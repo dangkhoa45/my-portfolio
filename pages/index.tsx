@@ -1,22 +1,19 @@
 import { HeroSection } from '@/components/home'
 import { MainLayout } from '@/components/layout'
 import { NextPageWithLayout } from '@/models'
+import { Box } from '@mui/material'
 import Head from 'next/head'
-import Link from 'next/link'
 
 const Home: NextPageWithLayout = () => {
 	return (
-		<>
+		<Box>
 			<Head>
 				<title>My portfolio | Code With Khoai ~ </title>
 			</Head>
 			<main>
-				<Link href="/blog">Blog</Link>
-				<Link href="/work">Work</Link>
-
 				<HeroSection />
 			</main>
-		</>
+		</Box>
 	)
 }
 
